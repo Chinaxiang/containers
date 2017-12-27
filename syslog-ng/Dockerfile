@@ -1,12 +1,11 @@
 FROM alpine:3.2
-MAINTAINER Chinaxiang
 
 ADD ./build.sh /build.sh
 RUN /build.sh
 
 ADD ./syslog-ng.conf /etc/syslog-ng/syslog-ng.conf
 
-VOLUME ["/var/log/syslog-ng", "/var/run/syslog-ng", "/etc/syslog-ng"]
+VOLUME ["/var/log/syslog-ng", "/var/run/syslog-ng"]
 
 EXPOSE 514/tcp 514/udp
 
