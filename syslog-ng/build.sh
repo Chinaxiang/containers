@@ -7,7 +7,7 @@ export DOWNLOAD_URL="https://github.com/balabit/syslog-ng/releases/download/sysl
 
 apk update
 apk add python gcc flex bison glib pcre autoconf
-apk add curl alpine-sdk pcre-dev
+apk add bash curl alpine-sdk pcre-dev
 
 cd /tmp
 curl -L "${DOWNLOAD_URL}" > "syslog-ng-${SYSLOG_VERSION}.tar.gz"
