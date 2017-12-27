@@ -1,10 +1,6 @@
 FROM alpine:3.2
 MAINTAINER Chinaxiang
 
-RUN apk --update add --no-cache \
-    bash \
-    dbus
-
 ADD ./build.sh /build.sh
 RUN chmod +x /build.sh && /build.sh
 
