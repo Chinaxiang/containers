@@ -1,7 +1,7 @@
 FROM alpine:3.2
 
 ADD ./build.sh /build.sh
-RUN /build.sh
+RUN chmod +x /build.sh && /build.sh
 
 ADD ./syslog-ng.conf /etc/syslog-ng/syslog-ng.conf
 
