@@ -3,7 +3,7 @@ MAINTAINER Chinaxiang
 
 RUN apk --update add --no-cache \
     bash \
-    dbus \
+    dbus
 
 ADD ./build.sh /build.sh
 RUN chmod +x /build.sh && /build.sh
