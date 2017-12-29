@@ -27,13 +27,14 @@ RUN rm -rf /var/cache/apk/*
 
 COPY entrypoint.sh /
 COPY supervisord.conf /etc/
+COPY syslog-ng.conf /etc/syslog-ng/
 RUN chmod +x /entrypoint.sh
 
 # Allow redirection of stdout to docker logs
 RUN ln -sf /proc/1/fd/1 /var/log/docker.log
 
 EXPOSE 80 
-EXPOSE 514/tcp 514/udp
+EXPOSE 514/tcp 514/udp 601/tcp 
 
 # Change Shell
 SHELL ["/bin/bash", "-c"]
