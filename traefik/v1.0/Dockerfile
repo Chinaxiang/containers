@@ -1,7 +1,8 @@
-FROM alpine:3.6
+FROM alpine:3.7
 MAINTAINER Chinaxiang
 
-RUN apk --update add --no-cache  \
+RUN apk update
+RUN apk add \
     ca-certificates \
     bash \
     supervisor \
@@ -21,6 +22,8 @@ RUN set -ex; \
   wget -O /usr/local/bin/traefik "https://github.com/containous/traefik/releases/download/v1.5.0-rc3/traefik_linux-$arch"; \
   apk del .fetch-deps; \
   chmod +x /usr/local/bin/traefik
+
+RUN rm -rf /var/cache/apk/*
 
 COPY entrypoint.sh /
 COPY supervisord.conf /etc/
