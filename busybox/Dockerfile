@@ -12,7 +12,7 @@ RUN apk add \
     apache2 \
     apache2-utils \
     apk-tools \
-    telnet \
+    perl-net-telnet \
     dbus
 
 RUN rm -rf /var/cache/apk/*
