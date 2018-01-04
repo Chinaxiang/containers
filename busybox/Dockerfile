@@ -9,6 +9,10 @@ RUN apk add \
     openssh-client \
     python \
     py-pip \
+    apache2 \
+    apache2-utils \
+    apk-tools \
+    telnet \
     dbus
 
 RUN rm -rf /var/cache/apk/*
