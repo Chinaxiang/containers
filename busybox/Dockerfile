@@ -1,6 +1,7 @@
 FROM alpine:3.7
 MAINTAINER Chinaxiang
 
+COPY repositories /etc/apk/repositories
 RUN apk update
 RUN apk add \
     bash \
