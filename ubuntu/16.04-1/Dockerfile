@@ -1,8 +1,6 @@
 FROM ubuntu:16.04
 MAINTAINER huangyanxiang
 
-COPY ./sources.list /etc/apt/sources.list
-
 RUN apt-get update
 RUN apt-get -y install \
 	bash \
@@ -15,7 +13,8 @@ RUN apt-get -y install \
 	tcpdump \
 	dstat \
 	sysstat \
-	curl 
+	curl \
+	lsof
 
 RUN apt-get clean
 
